@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron"><a href="{{ url_for('adminOrgTool') }}">Zarzadzanie organizatorami</a></div>
+
+<div class="jumbotron">
+    {% for user in usertab %}
+        <ul>
+            <li>
+                <span class="field-name">UserID:</span>
+                <span class="field-value">{{ user.user_id }}</span>
+            </li>
+
+            <li>
+                <span class="field-name">Nazwa:</span>
+                <span class="field-value">{{ user.user_name }}</span>
+            </li>
+
+            <li>
+                <span class="field-name">Email:</span>
+                <span class="field-value">{{ user.user_email }}</span>
+            </li>
+
+            <li>
+                <span class="field-name">Uprawnienia:</span>
+                <span class="field-value">{{ user.user_type }}</span>
+                {% if user.user_type < 2 %}
+                <form method="post">
+
+                    <button class=grey name="user_type" value="{{user.user_id}}">
+                        {% if user.user_type == 0 %}Podnies uprawnienia
+                        {% elif user.user_type == 1%}Opusc uprawnienia
+                        {% endif %}
+                    </button>
+                </form>
+                {% endif %}
+            </li>
+
+        </ul>
+        {% endfor %}
+    
+</div>
+
+{% endblock %}

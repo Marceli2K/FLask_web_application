@@ -1,0 +1,40 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <br />
+
+    {% for event in eventtab %}
+ 
+    {% endfor %}
+    <h1>Moje wydarzenia historyczne</h1>
+    {% for event in eventtab2 %}
+
+    <div class="jumbotron">
+        <ul id="{{event.event_id}}">
+            <li>
+                <span class="field-name">Wydarzenie:</span>
+                <span class="field-value">{{ event.event_name }}</span>
+            </li>
+
+            <li>
+                <span class="field-name">Opis wydarzenia:</span>
+                <span class="field-value">{{ event.event_desc }}</span>
+            </li>
+        </ul>
+        <p><a href={{url_for('details',event = event.event_id)}}><button class=grey>szczegóły wydarzenia</button></a></p>
+        {% if not formTab %}
+        <p><a href={{url_for('form',event = event.event_id)}}><button class=grey>Wez udział w ankiecie2</button></a></p>
+        {% else %}
+        {% if event.event_status == 2 %}
+        <p><a href={{url_for('form',event = event.event_id)}}><button class=grey>Wez udział w ankiecie</button></a></p>
+        {% elif event.event_status == 3 %}
+        <b> Dziekuje za udzial w ankiecie</b>
+        {% else %}
+        <b>{{event.event_status}}</b>
+        {% endif %}
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+    {% endblock %}

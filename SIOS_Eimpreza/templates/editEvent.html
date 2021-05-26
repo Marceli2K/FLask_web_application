@@ -1,0 +1,15 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Edytowanie wydarzenia wydarzenia.</h2>
+
+<form method="post">
+    <p>Tytuł wydarzenia: <input type=text name=event_name>
+    <p>Opis wydarzenia: <input type=text name=event_desc>
+    <p>Czas rozpoczęcia: <input type="datetime-local" name=event_starttime>
+    <p>Czas zakończenia: <input type="datetime-local" name=event_endtime>
+    <p><input type=submit value=Zapisz_zmiany>
+</form>
+
+{% endblock %}

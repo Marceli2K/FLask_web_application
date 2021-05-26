@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<form method="post">
+    <p>Imie</p>
+    <p><input type=text name=user_name value="{{request.form.user_name }}">
+    <p>Email</p>
+    <p><input type=text name=user_email value="{{request.form.user_email }}">
+    <p>Haslo</p>
+    <p><input type="password" name=user_pass value="{{request.form.user_pass }}">
+    <p><input type=submit value=Wyslij>
+</form>
+
+{% endblock %}

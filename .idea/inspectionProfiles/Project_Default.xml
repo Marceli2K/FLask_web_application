@@ -1,0 +1,35 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="pycocotools" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="CoarseNet.CoarseNet_run.CoarseNet_model" />
+          <option value="CoarseNet.CoarseNet_run.CoarseNet_utils" />
+          <option value="object.update" />
+          <option value="OutputMessage.OutputMessage.message" />
+          <option value="InputDataBox.pc_ipMask" />
+          <option value="ObjectCharacterPC.Screen" />
+          <option value="main.y_end" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="Pylint" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>

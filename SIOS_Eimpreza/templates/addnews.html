@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<h2>{{ title }}.</h2>
+
+<script>
+    function checkforempty(){
+        if(document.getElementById('txt').value  == ""){
+            alert('Error text area is empty!!! Enter text of the news!!!');
+            return false;
+            }
+        }
+</script>
+
+<form method="post" onsubmit="return checkforempty()">
+
+
+    <textarea id="txt" rows="4" cols="50" name="comment"></textarea>
+    <button class=grey name="event" value="{{event}}">Dodaj</button>
+
+</form>
+
+{% endblock %}

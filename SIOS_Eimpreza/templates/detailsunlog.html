@@ -1,0 +1,73 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v9.0" nonce="g9fRqh0j"></script>
+    <script>
+    function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+    }
+    </script>
+
+    <h1>Wydarzenie</h1>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-8">
+                <ul id="{{current_event.event_name}}">
+                    <li>
+                        <span class="field-name">Wydarzenie:</span>
+                        <span class="field-value">{{ current_event.event_name }}</span>
+                    </li>
+
+                    <li>
+                        <span class="field-name">Ramy czasowe wydarzenia:</span>
+                        <span class="field-value">{{ current_event.event_starttime }}</span>
+                        <span class="field-value">{{ current_event.event_endtime }}</span>
+                    </li>
+
+                    <li>
+                        <span class="field-name">Opis wydarzenia:</span>
+                        <span class="field-value">{{ current_event.event_desc }}</span>
+                    </li>
+
+                    <li>
+                        <span class="field-name">Organizator:</span>
+                        <span class="field-value">{{ current_event.event_org }}</span>
+                    </li>
+                    <li>
+                        <span class="field-name">Liczba punktów za uczestnictwo:</span>
+                        <span class="field-value">{{ current_event.event_point }}</span>
+                    </li>
+
+
+
+
+
+                </ul>
+                <span class="field-name" style="visibility: hidden" id="c">{{request.url}}</span>
+            </div>
+            <div class="col-md-4">
+
+                <button onclick="copyToClipboard('#c')"> Kopiuj link aby udostępnić </button><br />
+
+                <div class="fb-share-button" data-href="{{request.url}}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A57789%2Fdetails%2F42&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Udostępnij</a></div>
+
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Dołącz do wydarzenia!!! " data-url="{{request.url}}" data-hashtags="eimpreza" data-lang="pl" data-show-count="false">Tweet</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+    <h1>Aktualności do wydarzenia:</h1>
+    <div class="jumbotron">
+        {% for s in current_news%}
+        <li>{{s.news_text}}</li>
+        {%endfor%}
+        {{ news_id }}
+    </div>
+    {% endblock %}

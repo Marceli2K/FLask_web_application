@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>{{current_event.event_name}} </h1>
+    <p>Wypelniono {{iloscankiet}} ankiet</p>
+</div>
+<div class="jumbotron">
+    <span class="field-name">Ocena wydarzenia</span><br>
+    <p>1 (Bardzo slabo): {{ocena[0]}}</p>
+    <p>2 (slabo): {{ocena[1]}}</p>
+    <p>3 (srednio): {{ocena[2]}}</p>
+    <p>4 (dobrze): {{ocena[3]}}</p>
+    <p>5 (bardzo dobrze): {{ocena[4]}}</p>
+</div>
+<div class="jumbotron">
+    <span class="field-name">Czy miejsce sie podobalo</span><br>
+    <p>Tak: {{miejsce[0]}}</p>
+    <p>Nie: {{miejsce[1]}}</p>
+</div>
+<div class="jumbotron">
+    <span class="field-name">Czy jest zainteresowanie kolejna edycja</span><br>
+    <p>Tak: {{kolejnaedycja[0]}}</p>
+    <p>Nie: {{kolejnaedycja[1]}}</p>
+</div>
+<div class="jumbotron">
+    <span class="field-name">Czy czas byl odpowiedni</span><br>
+    <p>Tak: {{czas[0]}}</p>
+    <p>Nie: {{czas[1]}}</p>
+</div>
+<div class="jumbotron">
+    <span class="field-name">Czy bylo bezpiecznie</span><br>
+    <p>Tak: {{bezpieczenstwo[0]}}</p>
+    <p>Nie: {{bezpieczenstwo[1]}}</p>
+</div>
+<div class="jumbotron">
+    <span class="field-name">Uwagi</span><br>
+    {% for u in uwagi %}
+    <p>{{u}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

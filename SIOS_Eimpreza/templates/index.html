@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>E-Impreza</h1>
+    <p class="lead">E-Impreza to portal informacyjny o wydarzeniach studenckich.</p>
+    <p><a href="/register" class="btn btn-primary btn-large">Rozpocznij! &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Zacznij teraz</h2>
+        <p>
+            Zacznij korzystanie z serwisu. SIOS oferuje mozliwosc znalezienie wydarzen w twojej okolicy, zarejestruj sie i zacznij korzystac juz teraz.
+        </p>
+        <p><a class="btn btn-default" href="/register">Zarejestruj sie &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Zobacz aktualne wydarzenia</h2>
+        <p>Przejzyj wydarzenia odbywajace sie w poblizu</p>
+        <p><a class="btn btn-default" href="/wydarzenia">Zobacz wiecej &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Organizujesz wydarzenie?</h2>
+        <p>Skontaktuj sie z nami w celu zalozenia konta organizatora. Umozliwi to dostep do szerokiego grona potencjalnych uczestnikow!</p>
+        <p>Kontakt przez adres admin@admin</p>
+    </div>
+</div>
+
+{% endblock %}

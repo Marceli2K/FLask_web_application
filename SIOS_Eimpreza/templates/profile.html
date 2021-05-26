@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Hi {{session['user_name']}}</h1>
+<h2>{{ title }} {{session['user_email']}}</h2>
+<h3>You points: {{session['user_point']}}</h3>
+<p>Do you want to remove account?</p>
+<form method="post">
+    <p><input type=text name=user_pass value="{{request.form.user_pass }}"/>
+    <p><input id="Checkbox1" type="checkbox" name="remove" value="remove" />
+    <p><input type=submit value=RM>
+</form>
+{% endblock %}

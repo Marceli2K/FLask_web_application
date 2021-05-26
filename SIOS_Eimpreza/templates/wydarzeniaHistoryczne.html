@@ -1,0 +1,37 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Wydarzenia</h1>
+    <form method="post">
+        <div class="row">
+            <div class="col-md-1" style="width:auto">
+                <p><button class=grey name="tag" value="">All</button></p>
+            </div>
+            {% for tag in tagtab %}
+            <div class="col-md-1" style="width:auto">
+                <p><button class=grey name="tag" value="{{tag.tag_id}}">{{tag.tag_text}}</button></p>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+    {% for event in eventtab %}
+    <div class="jumbotron">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="field-name"><b>Wydarzenie:</b></span>
+                        <span class="field-value">{{ event.event_name }}</span>
+                        <p><span class="field-name">Opis wydarzenia:</span></p>
+                        <span class="field-value">{{ event.event_desc }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <p><a href={{url_for('details',event = event.event_id)}}><button class=grey>szczegóły wydarzenia</button></a></p>
+                        <span class="field-value">Liczba osób biorących udział: {{ count_user(event.event_id) }}</span>
+                    </div>
+                </div>
+    </div>
+    {% endfor %}
+</div>
+    {% endblock %}
+
+

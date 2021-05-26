@@ -1,0 +1,12 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}Wprowadź datę</h2>
+<form action="#" method="post">
+    {{ form.dt(class='datepicker') }}
+    {{ form.hidden_tag() }}
+    <input type="submit" />
+</form>
+
+{% endblock %}

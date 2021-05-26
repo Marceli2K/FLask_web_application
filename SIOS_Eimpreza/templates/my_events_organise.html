@@ -1,0 +1,27 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <br />
+    <h1>Wydarzenia w których jestem organizatorem</h1>
+
+    {% for event in eveOrganise %}
+    <div class="jumbotron">
+        <ul id="{{event.event_id}}">
+            <li>
+                <span class="field-name">Wydarzenie:</span>
+                <span class="field-value">{{ event.event_name }}</span>
+            </li>
+
+            <li>
+                <span class="field-name">Opis wydarzenia:</span>
+                <span class="field-value">{{ event.event_desc }}</span>
+            </li>
+        </ul>
+        <p><a href={{url_for('details',event = event.event_id)}}><button class=grey>szczegóły wydarzenia</button></a></p>
+    </div>
+
+    {% endfor %}
+
+</div>
+    {% endblock %}

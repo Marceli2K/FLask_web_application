@@ -1,0 +1,22 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+{%if session['user_type'] == 3 %} <!-- SUPERUSER -->
+
+<div class="jumbotron">
+    <b>Dodaj konto organizatora</b>
+    <form method="post">
+        <p>Nazwa organizatora</p>
+        <p><input type=text name=org_name value="{{request.form.org_name }}">
+        <p>Email organizatora</p>
+        <p><input type=text name=org_email value="{{request.form.org_email }}">
+        <p><input type=submit value=Send>
+    </form>
+</div>
+{%elif session['user_type'] != 3 %}
+<b><center>Cos poszlo nie tak</center></b>
+
+{% endif %}
+
+{% endblock %}

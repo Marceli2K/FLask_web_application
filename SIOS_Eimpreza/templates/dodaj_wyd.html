@@ -1,0 +1,16 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Dodawanie nowego wydarzenia.</h2><br/>
+<h4>*Pola wymagane!</h4>
+<form method="post" enctype='multipart/form-data'>
+    <p>Tytuł wydarzenia: *<input type=text name=event_name value="{{request.form.event_name }}" >
+    <p>Opis wydarzenia: <input type=text name=event_desc value="{{request.form.event_desc }}">
+    <p>Czas rozpoczęcia: *<input type="datetime-local" name=event_starttime value="{{request.form.event_starttime }} ">
+    <p>Czas zakończenia: *<input type="datetime-local" name=event_endtime value="{{request.form.event_endtime }} ">
+    <p>Liczba punktów za uczestnictwo: *<input type="number" name=event_point value="0" >
+    <p><input type=submit value=Dodaj>
+</form>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Witaj {{session['user_name']}} </h1>
+</div>
+<p>
+    <form method="post">
+        <div class="jumbotron">
+
+            <span class="field-name">Ocen wydarzenie</span><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pyt1" id="exampleRadios1" value="1">
+                <label class="form-check-label" for="exampleRadios1">
+                    1 (Bardzo slabo)
+                </label><br>
+                <input class="form-check-input" type="radio" name="pyt1" id="exampleRadios1" value="2">
+                <label class="form-check-label" for="exampleRadios1">
+                    2 (slabo)
+                </label><br>
+                <input class="form-check-input" type="radio" name="pyt1" id="exampleRadios1" value="3">
+                <label class="form-check-label" for="exampleRadios1">
+                    3 (srednio)
+                </label><br>
+                <input class="form-check-input" type="radio" name="pyt1" id="exampleRadios1" value="4">
+                <label class="form-check-label" for="exampleRadios1">
+                    4 (dobrze)
+                </label><br>
+                <input class="form-check-input" type="radio" name="pyt1" id="exampleRadios1" value="5" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    5 (bardzo dobrze)
+                </label><br>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <span class="field-name">Czy miejsce organizacji wydarzenia ci sie podobalo?</span><br>
+            <input type="radio" name="pyt2" value="tak" checked> Tak
+            <input type="radio" name="pyt2" value="nie"> Nie<br>
+        </div>
+        <div class="jumbotron">
+            <span class="field-name">Czy wzialbys udzial w kolejnej edycji tego wydarzenia?</span><br>
+            <input type="radio" name="pyt3" value="tak" checked> Tak
+            <input type="radio" name="pyt3" value="nie"> Nie<br>
+        </div>
+        <div class="jumbotron">
+            <span class="field-name">Czy czas wydarzenia byl dla ciebie odpowiedni?</span><br>
+            <input type="radio" name="pyt4" value="tak" checked> Tak
+            <input type="radio" name="pyt4" value="nie"> Nie<br>
+        </div>
+        <div class="jumbotron">
+            <span class="field-name">Czy czules sie bezpiecznie w trakcie trwania wydarzenia?</span><br>
+            <input type="radio" name="pyt5" value="tak" checked> Tak
+            <input type="radio" name="pyt5" value="nie"> Nie<br>
+        </div>
+        <div class="jumbotron">
+            <span class="field-name">Uwagi:</span><br>
+            <input type=text name=uwagi value="{{request.form.uwagi }}">
+           
+        </div>
+        <input type=submit value=Send href={{url_for('my_events')}}>
+    </form>
+</p>
+
+{% endblock %}

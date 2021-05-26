@@ -1,0 +1,15 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Wyślij wiadomość.</h2>
+<form method="post">
+
+    
+    <p>Message receipent: <input type="text" name=message_recipient value="{{request.form.message_recipient }}">
+    <p>Title: <input type="text" name=message_title value="{{request.form.message_title }}">
+    <p>Message: <input type="text" name=message_text value="{{request.form.message_text }}">
+    <p><input type=submit value=Wyslij>
+</form>
+
+{% endblock %}

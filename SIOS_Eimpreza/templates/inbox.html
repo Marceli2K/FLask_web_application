@@ -1,0 +1,32 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+    <h1>Wiadomości</h1>
+    <div class="container">
+        {% for message in messagetab %}
+        <div class="jumbotron">
+
+            <ul>
+                <li>
+                    <div class="field-name">Nadawca</div>
+                    <div class="field-value">{{message.user_email}}</div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div class="field-name">Tytuł wiadomosci:</div>
+                    <div class="field-value">{{ message.message_title}}</div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div class="field-name">Tresc:</div>
+                    <div class="field-value">{{ message.message_text}}</div>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+        <p><a href={{url_for('communicator')}}><button class=grey>Odpowiedz</button></a></p>
+    </div>
+        {% endblock %}
